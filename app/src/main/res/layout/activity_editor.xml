@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_bg">
+
+    <!-- Player View -->
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/player_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Caption Overlay -->
+    <com.myteam.ayah.ui.widget.CaptionOverlayView
+        android:id="@+id/caption_overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/player_view"
+        app:layout_constraintEnd_toEndOf="@id/player_view"
+        app:layout_constraintStart_toStartOf="@id/player_view"
+        app:layout_constraintTop_toTopOf="@id/player_view" />
+
+    <!-- Timeline View -->
+    <com.myteam.ayah.ui.widget.TimelineView
+        android:id="@+id/timeline_view"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:background="@color/card_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player_view" />
+
+    <!-- Timeline RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_timeline"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@color/card_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeline_view" />
+
+    <!-- Control Buttons -->
+    <LinearLayout
+        android:id="@+id/layout_controls"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@color/card_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_timeline">
+
+        <ImageButton
+            android:id="@+id/btn_trim"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/control_button_background"
+            android:contentDescription="@string/trim"
+            android:padding="16dp"
+            android:src="@drawable/ic_cut" />
+
+        <ImageButton
+            android:id="@+id/btn_move"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/control_button_background"
+            android:contentDescription="@string/move"
+            android:padding="16dp"
+            android:src="@drawable/ic_move" />
+
+        <ImageButton
+            android:id="@+id/btn_split"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/control_button_background"
+            android:contentDescription="@string/split"
+            android:padding="16dp"
+            android:src="@drawable/ic_split" />
+
+        <ImageButton
+            android:id="@+id/btn_merge"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/control_button_background"
+            android:contentDescription="@string/merge"
+            android:padding="16dp"
+            android:src="@drawable/ic_merge" />
+
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/control_button_background"
+            android:contentDescription="@string/delete"
+            android:padding="16dp"
+            android:src="@drawable/ic_delete"
+            android:tint="@color/error" />
+
+        <ImageButton
+            android:id="@+id/btn_style"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/control_button_background"
+            android:contentDescription="@string/style"
+            android:padding="16dp"
+            android:src="@drawable/ic_style" />
+
+        <ImageButton
+            android:id="@+id/btn_position"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/control_button_background"
+            android:contentDescription="@string/position"
+            android:padding="16dp"
+            android:src="@drawable/ic_position" />
+
+    </LinearLayout>
+
+    <!-- Bottom Toolbar -->
+    <LinearLayout
+        android:id="@+id/bottom_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/dark_bg"
+        android:gravity="center|end"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_manual_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/manual_add"
+            android:src="@drawable/ic_add"
+            android:tint="@color/primary_gold"
+            app:backgroundTint="@color/card_bg"
+            app:fabSize="normal" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

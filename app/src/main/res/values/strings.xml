@@ -1,0 +1,114 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Ayah - آيات</string>
+    
+    <!-- Home Screen -->
+    <string name="home_subtitle">Ayah Video Editor</string>
+    <string name="create_video_project">إنشاء فيديو قرآني</string>
+    <string name="my_projects">مشاريعي</string>
+    <string name="recent_projects">المشاريع الأخيرة</string>
+    <string name="no_recent_projects">لا توجد مشاريع حديثة</string>
+    
+    <!-- Import Screen -->
+    <string name="import_video_title">تحميل ملفات</string>
+    <string name="drop_zone_text">اسحب ملف الفيديو أو الصوت هنا أو اضغط للتصفح</string>
+    <string name="aspect_ratio">نسبة العرض إلى الارتفاع</string>
+    <string name="browse_video">اختيار فيديو</string>
+    <string name="browse_audio_optional">اختيار صوت (اختياري)</string>
+    <string name="import_project">استيراد</string>
+    
+    <!-- Processing Screen -->
+    <string name="processing_title">تحليل الصوت وإنشاء الكابتشن</string>
+    <string name="processing_starting">بدء المعالجة...</string>
+    <string name="extracting_audio">استخراج الصوت</string>
+    <string name="converting_to_text">تحويل الصوت إلى نص</string>
+    <string name="matching_quran">مطابقة النص مع القرآن</string>
+    <string name="building_timeline">إنشاء المقاطع على الخط الزمني</string>
+    <string name="processing_complete">تم الانتهاء بنجاح!</string>
+    <string name="cancel">إلغاء</string>
+    
+    <!-- Editor Screen -->
+    <string name="editor_title">محرر الآيات</string>
+    <string name="trim">قص</string>
+    <string name="move">نقل</string>
+    <string name="split">تقسيم</string>
+    <string name="merge">دمج</string>
+    <string name="delete">حذف</string>
+    <string name="style">نمط</string>
+    <string name="position">موضع</string>
+    <string name="manual_add">إضافة يدوية</string>
+    
+    <!-- Export Screen -->
+    <string name="export_title">تصدير الفيديو</string>
+    <string name="preview">معاينة</string>
+    <string name="quality">الجودة</string>
+    <string name="dimensions">الأبعاد</string>
+    <string name="save_to_gallery">حفظ في المعرض</string>
+    <string name="export">تصدير</string>
+    
+    <!-- Projects Screen -->
+    <string name="projects_title">مشاريعي</string>
+    <string name="back">رجوع</string>
+    <string name="edit">تحرير</string>
+    
+    <!-- Messages -->
+    <string name="project_created_successfully">تم إنشاء المشروع بنجاح</string>
+    <string name="video_import_failed">فشل في استيراد الفيديو</string>
+    <string name="processing_failed">فشل في المعالجة</string>
+    <string name="export_failed">فشل في التصدير</string>
+    <string name="network_error">خطأ في الاتصال</string>
+    
+    <!-- Dialog Messages -->
+    <string name="confirm_delete">هل أنت متأكد من حذف هذا المشروع؟</string>
+    <string name="delete_project">حذف المشروع</string>
+    <string name="confirm">تأكيد</string>
+    <string name="processing_error">خطأ في المعالجة: %1$s</string>
+    <string name="retry">إعادة المحاولة</string>
+    <string name="no_captions_yet">لا توجد كابتشن بعد. يمكنك إعادة التحليل أو إضافة آية يدويًا.</string>
+    
+    <!-- Menu Items -->
+    <string name="action_export">تصدير</string>
+    <string name="action_manual_add">إضافة يدوية</string>
+    <string name="action_review_matches">مراجعة المطابقات</string>
+    
+    <!-- Style Options -->
+    <string name="font_family_cairo">Cairo</string>
+    <string name="font_family_amiri">Amiri</string>
+    <string name="position_top">أعلى</string>
+    <string name="position_center">وسط</string>
+    <string name="position_bottom">أسفل</string>
+    <string name="alignment_start">بداية</string>
+    <string name="alignment_center">وسط</string>
+    <string name="alignment_end">نهاية</string>
+    
+    <!-- Time Format -->
+    <string name="time_format_mm_ss">%1$d:%2$02d</string>
+    <string name="time_format_hh_mm_ss">%1$d:%2$02d:%3$02d</string>
+    <string name="duration_format">%1$d د %2$d ث</string>
+    
+    <!-- Quality Options -->
+    <string name="quality_original">الأصلية</string>
+    <string name="quality_1080p">1080p</string>
+    <string name="quality_4k">4K</string>
+    
+    <!-- Dimensions Options -->
+    <string name="dimensions_original">الأصلية</string>
+    <string name="dimensions_instagram">Instagram</string>
+    <string name="dimensions_youtube">YouTube</string>
+    
+    <!-- Error Messages -->
+    <string name="error_no_video_selected">يرجى اختيار ملف فيديو</string>
+    <string name="error_file_not_found">الملف غير موجود</string>
+    <string name="error_insufficient_storage">مساحة تخزين غير كافية</string>
+    <string name="error_permission_denied">تم رفض الإذن</string>
+    
+    <!-- Success Messages -->
+    <string name="success_project_created">تم إنشاء المشروع بنجاح</string>
+    <string name="success_processing_complete">تمت المعالجة بنجاح</string>
+    <string name="success_export_complete">تم التصدير بنجاح</string>
+    
+    <!-- Loading Messages -->
+    <string name="loading">جاري التحميل...</string>
+    <string name="processing">جاري المعالجة...</string>
+    <string name="exporting">جاري التصدير...</string>
+</resources>

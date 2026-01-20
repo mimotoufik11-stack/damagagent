@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="موضع النص"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Vertical Position -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="الموضع الرأسي"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_vertical_position"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/rb_top"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="أعلى"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rb_center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="وسط"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rb_bottom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="أسفل"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+
+        </RadioGroup>
+
+        <!-- Horizontal Alignment -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="المحاذاة الأفقية"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_horizontal_alignment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/rb_start"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="بداية"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rb_center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="وسط"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rb_end"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="نهاية"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp" />
+
+        </RadioGroup>
+
+        <!-- Offset Controls -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="التحريك الدقيق"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+            <!-- Offset Control Grid -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btn_offset_up"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:text="↑"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:background="@drawable/control_button_background"
+                    android:layout_margin="4dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <Button
+                    android:id="@+id/btn_offset_left"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:text="←"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:background="@drawable/control_button_background"
+                    android:layout_margin="4dp" />
+
+                <Button
+                    android:id="@+id/btn_reset_offset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="إعادة تعيين"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:background="@drawable/button_secondary"
+                    android:layout_margin="4dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp" />
+
+                <Button
+                    android:id="@+id/btn_offset_right"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:text="→"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:background="@drawable/control_button_background"
+                    android:layout_margin="4dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_offset_down"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:text="↓"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:background="@drawable/control_button_background"
+                    android:layout_margin="4dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/button_secondary"
+                android:text="إلغاء"
+                android:textColor="@color/text_secondary" />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/button_primary"
+                android:text="حفظ"
+                android:textColor="@color/primary_gold"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
