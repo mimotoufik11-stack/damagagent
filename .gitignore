@@ -1,0 +1,87 @@
+# Dammaj Al-Quran - Git Ignore Rules
+
+# Dependencies
+node_modules/
+bower_components/
+
+# Build outputs
+dist/
+build/
+release/
+*.exe
+*.dmg
+*.pkg
+*.deb
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Data directory
+backend/data/
+!backend/data/.gitkeep
+
+# Models
+backend/models/
+!backend/models/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.dist-info/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc
+*.local

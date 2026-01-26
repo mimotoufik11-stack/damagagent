@@ -1,0 +1,83 @@
+/* Dammaj Al-Quran - RTL Layout Support */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Flip icons and arrows for RTL */
+[dir="rtl"] .flip-rtl {
+  transform: scaleX(-1);
+}
+
+/* Margin and padding adjustments for RTL */
+[dir="rtl"] .ms-1 { margin-left: var(--spacing-xs); margin-right: 0; }
+[dir="rtl"] .ms-2 { margin-left: var(--spacing-sm); margin-right: 0; }
+[dir="rtl"] .ms-3 { margin-left: var(--spacing-md); margin-right: 0; }
+[dir="rtl"] .ms-4 { margin-left: var(--spacing-lg); margin-right: 0; }
+
+[dir="rtl"] .me-1 { margin-right: var(--spacing-xs); margin-left: 0; }
+[dir="rtl"] .me-2 { margin-right: var(--spacing-sm); margin-left: 0; }
+[dir="rtl"] .me-3 { margin-right: var(--spacing-md); margin-left: 0; }
+[dir="rtl"] .me-4 { margin-right: var(--spacing-lg); margin-left: 0; }
+
+[dir="rtl"] .ps-1 { padding-left: var(--spacing-xs); padding-right: 0; }
+[dir="rtl"] .ps-2 { padding-left: var(--spacing-sm); padding-right: 0; }
+[dir="rtl"] .ps-3 { padding-left: var(--spacing-md); padding-right: 0; }
+[dir="rtl"] .ps-4 { padding-left: var(--spacing-lg); padding-right: 0; }
+
+[dir="rtl"] .pe-1 { padding-right: var(--spacing-xs); padding-left: 0; }
+[dir="rtl"] .pe-2 { padding-right: var(--spacing-sm); padding-left: 0; }
+[dir="rtl"] .pe-3 { padding-right: var(--spacing-md); padding-left: 0; }
+[dir="rtl"] .pe-4 { padding-right: var(--spacing-lg); padding-left: 0; }
+
+/* Flex adjustments for RTL */
+[dir="rtl"] .flex-row-reverse {
+  flex-direction: row;
+}
+
+[dir="rtl"] .justify-start {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .justify-end {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .items-start {
+  align-items: flex-end;
+}
+
+[dir="rtl"] .items-end {
+  align-items: flex-start;
+}
+
+/* Border radius adjustments for RTL */
+[dir="rtl"] .rounded-s { border-radius: var(--radius-sm); }
+[dir="rtl"] .rounded-e { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+
+/* Timeline specific RTL adjustments */
+[dir="rtl"] .timeline {
+  direction: ltr;
+}
+
+[dir="rtl"] .timeline * {
+  direction: rtl;
+}
+
+/* Input placeholder */
+[dir="rtl"] ::placeholder {
+  text-align: right;
+}
+
+/* Number input arrows */
+[dir="rtl"] input[type="number"] {
+  text-align: left;
+}
+
+/* Select dropdown arrow */
+[dir="rtl"] select {
+  background-position: left center;
+  padding-left: 32px;
+  padding-right: 12px;
+}

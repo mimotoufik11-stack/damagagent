@@ -1,0 +1,51 @@
+.ruler {
+  height: 100%;
+  position: relative;
+  background: var(--bg-secondary);
+}
+
+.marker {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+.marker.minor {
+  height: 40%;
+  background: var(--border-color);
+}
+
+.marker.major {
+  height: 100%;
+  background: var(--border-color);
+}
+
+.label {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  font-size: 10px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.currentIndicator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ef4444;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.currentIndicator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -5px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #ef4444;
+}
