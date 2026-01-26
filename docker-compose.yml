@@ -1,0 +1,113 @@
+version: '3.8'
+
+services:
+  # Frontend - Electron App
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: dammaj-quran-frontend
+    environment:
+      - REACT_APP_API_URL=http://backend:8000
+      - REACT_APP_ENV=development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - dammaj-network
+    depends_on:
+      - backend
+      - redis
+    restart: unless-stopped
+
+  # Backend - FastAPI
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: dammaj-quran-backend
+    environment:
+      - DATABASE_URL=postgresql://dammaj_user:dammaj_password@postgres:5432/dammaj_quran
+      - REDIS_URL=redis://redis:6379
+      - SECRET_KEY=your-secret-key-change-in-production
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - FFMPEG_PATH=/usr/bin/ffmpeg
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - uploads:/app/uploads
+      - exports:/app/exports
+      - models:/app/models
+    networks:
+      - dammaj-network
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+
+  # Database
+  postgres:
+    image: postgres:13
+    container_name: dammaj-quran-postgres
+    environment:
+      - POSTGRES_DB=dammaj_quran
+      - POSTGRES_USER=dammaj_user
+      - POSTGRES_PASSWORD=dammaj_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/migrations:/docker-entrypoint-initdb.d
+    networks:
+      - dammaj-network
+    restart: unless-stopped
+
+  # Cache
+  redis:
+    image: redis:7-alpine
+    container_name: dammaj-quran-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - dammaj-network
+    restart: unless-stopped
+
+  # NGINX Reverse Proxy (Production)
+  nginx:
+    image: nginx:alpine
+    container_name: dammaj-quran-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    networks:
+      - dammaj-network
+    depends_on:
+      - frontend
+      - backend
+    profiles:
+      - production
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  uploads:
+    driver: local
+  exports:
+    driver: local
+  models:
+    driver: local
+
+networks:
+  dammaj-network:
+    driver: bridge
