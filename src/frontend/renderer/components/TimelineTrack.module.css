@@ -1,0 +1,32 @@
+.track {
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+  background-image: linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+  background-size: 100px 100%;
+}
+
+.track.locked {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.track.locked::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.1) 10px,
+    rgba(0, 0, 0, 0.1) 20px
+  );
+  pointer-events: none;
+}
+
+.track.hidden {
+  opacity: 0.4;
+}

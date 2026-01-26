@@ -1,0 +1,96 @@
+.titleBar {
+  height: 40px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.left, .center, .right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoIcon {
+  font-size: 20px;
+  color: var(--accent-color);
+}
+
+.logoText {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.projectName {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.separator {
+  opacity: 0.5;
+}
+
+.menuBar {
+  display: flex;
+  gap: 4px;
+  -webkit-app-region: no-drag;
+}
+
+.menuBar button {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menuBar button:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.windowControls {
+  display: flex;
+  -webkit-app-region: no-drag;
+}
+
+.controlBtn {
+  width: 46px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.controlBtn:hover {
+  background: var(--bg-hover);
+}
+
+.controlBtn.close:hover {
+  background: #dc2626;
+  color: white;
+}
