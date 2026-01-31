@@ -1,0 +1,100 @@
+{
+  "name": "quran-video-editor",
+  "version": "1.0.0",
+  "description": "تطبيق سطح مكتب متقدم لتحرير فيديو القرآن الكريم",
+  "main": "main.js",
+  "author": "Quran Video Editor Team",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development electron .",
+    "build": "npm run build:renderer && npm run build:electron",
+    "build:renderer": "vite build",
+    "build:electron": "electron-builder --win --x64",
+    "build:all": "electron-builder -mwl",
+    "serve": "vite preview",
+    "lint": "eslint src --ext .js,.jsx",
+    "test": "jest"
+  },
+  "build": {
+    "appId": "com.quran.videoeditor",
+    "productName": "Quran Video Editor",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "build/**/*",
+      "public/**/*",
+      "node_modules/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "public/ffmpeg",
+        "to": "ffmpeg"
+      },
+      {
+        "from": "public/fonts",
+        "to": "fonts"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "public/icons/icon.ico",
+      "artifactName": "QuranVideoEditor-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Quran Video Editor"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "public/icons/icon.icns",
+      "category": "public.app-category.video"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "public/icons/icon.png",
+      "category": "Video"
+    }
+  },
+  "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.10",
+    "@ffmpeg/util": "^0.12.1",
+    "axios": "^1.6.5",
+    "electron-store": "^8.1.0",
+    "express": "^4.18.2",
+    "fluent-ffmpeg": "^2.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "react-player": "^2.14.1",
+    "react-router-dom": "^6.21.3",
+    "uuid": "^9.0.1",
+    "wavesurfer.js": "^7.7.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.17",
+    "cross-env": "^7.0.3",
+    "electron": "^28.1.4",
+    "electron-builder": "^24.9.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.0.11"
+  }
+}
