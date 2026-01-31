@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #475569 #1e293b;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+  }
+
+  body {
+    @apply bg-dark-900 text-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-dark-700 hover:bg-dark-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-icon {
+    @apply p-2 rounded-lg hover:bg-dark-700 transition-colors duration-200;
+  }
+
+  .input-field {
+    @apply bg-dark-800 border border-dark-600 text-white rounded-lg px-4 py-2 focus:outline-none focus:border-primary-500 transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-dark-800 border border-dark-700 rounded-lg p-4;
+  }
+
+  .panel {
+    @apply bg-dark-800 border-r border-dark-700;
+  }
+
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50;
+  }
+
+  .modal-content {
+    @apply bg-dark-800 border border-dark-700 rounded-lg shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto;
+  }
+
+  .tooltip {
+    @apply absolute hidden group-hover:block bg-dark-950 text-white text-sm px-2 py-1 rounded shadow-lg z-50;
+  }
+
+  .timeline {
+    @apply bg-dark-900 border-t border-dark-700;
+  }
+
+  .track {
+    @apply bg-dark-800 border border-dark-700 rounded;
+  }
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Arabic Typography */
+.arabic-text {
+  font-family: 'Cairo', 'Noto Sans Arabic', sans-serif;
+  direction: rtl;
+}
+
+.quran-text {
+  font-family: 'Amiri Quran', 'Traditional Arabic', serif;
+  direction: rtl;
+  line-height: 2;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.loading-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(to right, #1e293b 4%, #334155 25%, #1e293b 36%);
+  background-size: 1000px 100%;
+}
+
+/* Video Player Styles */
+.video-controls {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+}
+
+/* Caption Styles */
+.caption-overlay {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  max-width: 90%;
+}
+
+.caption-text {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+/* Progress Bar */
+.progress-bar {
+  height: 4px;
+  background: #334155;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+  transition: width 0.3s ease;
+}
+
+/* Drag and Drop */
+.drop-zone {
+  border: 2px dashed #475569;
+  transition: all 0.3s ease;
+}
+
+.drop-zone.active {
+  border-color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.1);
+}
+
+/* Waveform */
+.waveform-container {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background: #1e293b;
+  border-radius: 4px;
+  overflow: hidden;
+}

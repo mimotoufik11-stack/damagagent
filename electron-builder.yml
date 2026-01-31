@@ -1,0 +1,96 @@
+appId: com.quran.videoeditor
+productName: Quran Video Editor
+copyright: Copyright © 2024 ${author}
+asar: true
+
+directories:
+  output: dist
+  buildResources: public
+
+files:
+  - main.js
+  - preload.js
+  - build/**/*
+  - public/**/*
+  - package.json
+  - "!**/node_modules/**/*"
+  - node_modules/**/*
+
+extraResources:
+  - from: public/ffmpeg
+    to: ffmpeg
+  - from: public/fonts
+    to: fonts
+
+win:
+  target:
+    - nsis
+  icon: public/icons/icon.ico
+  artifactName: ${productName}-Setup-${version}.${ext}
+  
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  allowElevation: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: ${productName}
+  uninstallDisplayName: ${productName}
+  installerIcon: public/icons/icon.ico
+  uninstallerIcon: public/icons/icon.ico
+  installerHeaderIcon: public/icons/icon.ico
+  deleteAppDataOnUninstall: false
+
+mac:
+  target:
+    - dmg
+    - zip
+  icon: public/icons/icon.icns
+  category: public.app-category.video
+  darkModeSupport: true
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  artifactName: ${productName}-${version}-${arch}.${ext}
+
+dmg:
+  contents:
+    - x: 130
+      y: 220
+    - x: 410
+      y: 220
+      type: link
+      path: /Applications
+  title: ${productName} ${version}
+  icon: public/icons/icon.icns
+  background: public/icons/background.png
+  window:
+    width: 540
+    height: 380
+
+linux:
+  target:
+    - AppImage
+    - deb
+    - rpm
+  icon: public/icons/icon.png
+  category: Video
+  maintainer: info@quranvideoeditor.com
+  synopsis: Professional Quran Video Editor
+  description: Advanced desktop application for editing Quran videos with Arabic caption support
+  artifactName: ${productName}-${version}-${arch}.${ext}
+
+deb:
+  depends:
+    - ffmpeg
+
+rpm:
+  depends:
+    - ffmpeg
+
+appImage:
+  license: MIT
+
+publish:
+  provider: github
+  owner: your-username
+  repo: quran-video-editor
