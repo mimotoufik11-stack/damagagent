@@ -99,10 +99,21 @@ npm run build:electron
 npm run build:all
 ```
 
+### بناء لنظام Android (APK)
+```bash
+npm run build:android
+```
+
+**بديلاً، يمكنك بناء APK تلقائياً عبر GitHub Actions:**
+1. ادفع الكود إلى الفرع `main`
+2. انتظر إتمام عملية البناء في تبويب Actions
+3. قم بتحميل ملف الـ APK من الأرشيف المُنشأ
+
 ### الملفات الناتجة
 - **Windows**: `QuranVideoEditor-Setup-{version}.exe` (~150-200 MB)
 - **macOS**: `QuranVideoEditor-{version}.dmg`
 - **Linux**: `QuranVideoEditor-{version}.AppImage`
+- **Android**: `app-debug.apk` (متاح عبر GitHub Actions)
 
 ## 📖 دليل الاستخدام
 

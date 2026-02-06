@@ -1,6 +1,17 @@
 {
   "appId": "com.quran.videoeditor",
   "appName": "Quran Video Editor",
-  "webDir": "dist",
-  "bundledWebRuntime": false
+  "webDir": "build",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "buildOptions": {
+      "keystorePath": "debug.keystore",
+      "keystoreAlias": "androiddebugkey",
+      "keystoreAliasPassword": "android",
+      "keystorePassword": "android"
+    }
+  }
 }
