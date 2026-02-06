@@ -1,0 +1,6 @@
+{
+  "appId": "com.quran.videoeditor",
+  "appName": "Quran Video Editor",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
