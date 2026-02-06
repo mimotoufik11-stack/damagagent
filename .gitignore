@@ -9,6 +9,10 @@ build/
 dist/
 out/
 
+# Capacitor
+android/
+ios/
+
 # IDE
 .vscode/
 .idea/
